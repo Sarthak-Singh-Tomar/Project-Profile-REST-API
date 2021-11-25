@@ -69,7 +69,9 @@ To create a django application
 You need to go to settings file for your django project and find "INSTALLED_APPS" block, this is where we need to list all of the apps that you need to use for your project. These are the following apps you need to add:
 
 > 'rest_framework',
+
 > 'rest_framework.authtoken',
+
 > 'porfiles_api',
 
 ### Start Django development web server for testing:

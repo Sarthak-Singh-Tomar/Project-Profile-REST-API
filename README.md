@@ -3,7 +3,7 @@
 ### Creating local development server:
 We will create a local development server that can run and test our API as we build it. We are going to be creating a development server using a tool called Vagrant. Vagrant allows you to define the type of server you need for the project as a vagrant file and store this file with the source code of our project. You can create a new vagrant file by using the vagrant CLI tool.
 ```
-> vagrant init ubuntu/bionic64
+vagrant init ubuntu/bionic64
 ```
 It initializes our project with a new vagrant file and it bases it on the ubuntu bionic 64 base image. These images are publicly available in the vagrant catalog box.
 ```
@@ -67,13 +67,11 @@ python manage.py startapp profiles_api
 ```
 ### Enabling the application:
 You need to go to settings file for your django project and find "INSTALLED_APPS" block, this is where we need to list all of the apps that you need to use for your project. These are the following apps you need to add:
-
-> 'rest_framework',
-
-> 'rest_framework.authtoken',
-
-> 'porfiles_api',
-
+```
+'rest_framework',
+'rest_framework.authtoken',
+'porfiles_api',
+```
 ### Start Django development web server for testing:
 You can start the django development server, first make sure you are using vagrant box and inside the vagrant directory and virtual enviroment is turned on. Now use:
 ```

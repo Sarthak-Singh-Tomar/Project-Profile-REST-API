@@ -27,3 +27,32 @@ For Synchronizing the development server with project directory you need to firs
 > cd /Vagrant
 
 This will switch you to vagrant directory on our server. Now everything in this vagrant directory is synchronized with everything in our project folder. This synchronization works both ways from the server to our host and form our host to the server.
+
+### Python virtual enviroment:
+To create a python virtual environment go to the vagrant directory and use python venv command:
+
+> python -m venv ~/env
+
+using ~ will create python virtual environment in the home directory of the your vagrant server (which is not synchronized with local machine) opposed to the vagrant folder which is synchronized with our local machine. The way virtual environment works you need to activate and deactivate them. So when you're activated on a virtual environment all of the dependencies that you run in the python application will be pulled from the virtual environment instead of the base operating system. To activate virtual environment:
+
+> source ~/env/bin/activate
+
+To switch off from virtual environment type:
+
+> deactivate
+
+### Installing required packages:
+
+To install the required packages which is django and djangorestframework for our project first create requirements.txt file
+and then edit the file as follow:
+django==<versio>
+djangorestframework==<version>
+save the file.
+
+> touch requirements.txt
+
+To install the requirements make sure that you are in vagrant directory and virtual environment is activated. Now type:
+
+> pip install -r requirements.txt
+
+-r stands for requirements.

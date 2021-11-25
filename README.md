@@ -42,7 +42,6 @@ To switch off from virtual environment type:
 > deactivate
 
 ### Installing required packages:
-
 To install the required packages which is django and djangorestframework for our project first create requirements.txt file
 and then edit the file as follow:
 django==<versio>
@@ -56,3 +55,26 @@ To install the requirements make sure that you are in vagrant directory and virt
 > pip install -r requirements.txt
 
 -r stands for requirements.
+
+### Creating Django project and application:
+To create a django project we will use django command line tool - django-admin.
+
+> django-admin.py startproject profiles_project .
+
+To create a django application
+
+> python manage.py startapp profiles_api
+
+### Enabling the application:
+You need to go to settings file for your django project and find "INSTALLED_APPS" block, this is where we need to list all of the apps that you need to use for your project. These are the following apps you need to add:
+
+> 'rest_framework',
+> 'rest_framework.authtoken',
+> 'porfiles_api',
+
+### Start Django development web server for testing:
+You can start the django development server, first make sure you are using vagrant box and inside the vagrant directory and virtual enviroment is turned on. Now use:
+
+> python manage.py runserver 0.0.0.0:8000
+
+"python manage.py" It asks the django to start running development web server and this "0.0.0.0" means make it available on all network adapters on our development server and this ":8000" says start it in port 8000 so we can access it via port 8000. Now go to browser and type in search bar 127.0.0.1:8000 to check the that the server is up and running.
